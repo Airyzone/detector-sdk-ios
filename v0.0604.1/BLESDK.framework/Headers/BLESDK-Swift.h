@@ -181,8 +181,139 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeaconAPI * 
 - (void)checkBeaconExistWithBeaconID:(NSString * _Nonnull)beaconID completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 - (void)getBeaconInfoWithBeaconID:(NSString * _Nonnull)beaconID completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 - (void)setBeaconInfoWithBeaconInfo:(BeaconInfo * _Nonnull)beaconInfo completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Bind user’s beacon device with userId and beaconId
+/// precondition:
+/// <em>userId</em>, <em>beaconId</em> and <em>name</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param userId One User ID.
+///
+/// \param beaconId mBeacon’s macId.
+///
+/// \param name Beacon’s nickname.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
 - (void)bindBeaconWithUserWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId NickName:(NSString * _Nonnull)name completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Unbind user’s beacon device with userId and beaconId
+/// precondition:
+/// <em>userId</em> and <em>beaconId</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param userId One User ID.
+///
+/// \param beaconId mBeacon’s macId.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
 - (void)unBindBeaconWithUserWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Set user’s beacon device missing with userId and beaconId
+/// precondition:
+/// <em>userId</em> and <em>beaconId</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param userId One User ID.
+///
+/// \param beaconId mBeacon’s macId.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
+- (void)setBeaconMissingWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Get beacon device missing List
+/// precondition:
+/// <em>userId</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param userId One User ID.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
+- (void)getBeaconMissingListWithUserID:(NSString * _Nonnull)userId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Report to server while finding the missing beacon device
+/// precondition:
+/// <em>beaconId</em>, <em>lat</em> and <em>lng</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param beaconId mBeacon’s macId.
+///
+/// \param lat Latitude.
+///
+/// \param lng Longitude.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
+- (void)setBeaconCollisionWithBeaconID:(NSString * _Nonnull)beaconId Latitude:(float)lat Longitude:(float)lng completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Get beacon collision log
+/// precondition:
+/// <em>beaconId</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param beaconId mBeacon’s macId.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
+- (void)getBeaconCollisionLogWithBeaconID:(NSString * _Nonnull)beaconId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+/// Cancel user’s beacon device missing with userId and beaconId
+/// precondition:
+/// <em>userId</em> and <em>beaconId</em> should not be nil.
+/// todo:
+/// NONE
+/// version:
+/// 0.1
+/// author:
+/// Rusty
+/// \param userId One User ID.
+///
+/// \param beaconId mBeacon’s macId.
+///
+/// \param handler Api Complete Handler.
+///
+///
+/// returns:
+/// Void
+- (void)cancelBeaconMissingWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 @end
 
 
