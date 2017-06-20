@@ -149,6 +149,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeaconAPI * 
 - (NSArray<mBeacon *> * _Nonnull)getBeaconList SWIFT_WARN_UNUSED_RESULT;
 - (mBeacon * _Nullable)getCurrentBeacon SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)getLastResult SWIFT_WARN_UNUSED_RESULT;
+- (void)callBuzzer:(mBeacon * _Nullable)beacon;
+- (void)readRecordData:(mBeacon * _Nullable)beacon;
+- (void)readBattery:(mBeacon * _Nullable)beacon :(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nonnull))completionHandler;
 @end
 
 @class CBPeripheral;
@@ -158,7 +161,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeaconAPI * 
 @interface BeaconAPI (SWIFT_EXTENSION(BLESDK)) <CBPeripheralDelegate>
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didWriteValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
 - (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
 @end
 
@@ -314,6 +316,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeaconAPI * 
 /// returns:
 /// Void
 - (void)cancelBeaconMissingWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+- (void)getDataByDateWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId Date:(NSString * _Nonnull)date completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+- (void)getDataByMonthWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId Month:(NSString * _Nonnull)date completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+- (void)getDataByYearWithUserID:(NSString * _Nonnull)userId BeaconID:(NSString * _Nonnull)beaconId Year:(NSString * _Nonnull)date completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 @end
 
 

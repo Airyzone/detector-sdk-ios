@@ -25,6 +25,9 @@
 #define mBeacon20_BLE_OTA_SERVICE_UUID_STRING       @"6413"
 #define mBeacon20_BLE_READ_SERVICE_UUID_STRING      @"6420"
 #define mBeacon20_BLE_WRITE_SERVICE_UUID_STRING     @"6421"
+#define mBeacon20_BLE_COLLAR_SERVICE_UUID_STRING    @"6450"
+#define mBeacon20_BLE_COLLAR_WRITE_UUID_STRING      @"6451"
+#define mBeacon20_BLE_COLLAR_READ_UUID_STRING       @"6452"
 
 #define mBEACON_ID_LENGTH                   12
 
