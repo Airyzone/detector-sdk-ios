@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+workspace 'blesample'
+
+target 'blesample' do
+
+xcodeproj 'blesample.xcodeproj'
+workspace 'blesample'
+pod 'AFNetworking', '~> 3.0'
+pod 'Toast-Swift', '~> 2.0.0'
+pod 'Alamofire', '~> 4.3'
+pod 'PKHUD', '~> 4.0'
+pod 'CocoaMQTT', '~> 1.0'
+pod 'iOSDFULibrary', '~> 3.0'
+end

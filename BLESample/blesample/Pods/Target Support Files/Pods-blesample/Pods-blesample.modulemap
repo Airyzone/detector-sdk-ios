@@ -1,0 +1,6 @@
+framework module Pods_blesample {
+  umbrella header "Pods-blesample-umbrella.h"
+
+  export *
+  module * { export * }
+}
