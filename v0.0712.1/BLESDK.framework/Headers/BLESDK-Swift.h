@@ -248,8 +248,10 @@ typedef SWIFT_ENUM(NSInteger, ActivatedStepState) {
   ActivatedStepStateChangepw2 = 7,
   ActivatedStepStateReadseed = 8,
   ActivatedStepStateUpload = 9,
-  ActivatedStepStateDisconnect = 10,
-  ActivatedStepStateFinished = 11,
+  ActivatedStepStateAdjustTime = 10,
+  ActivatedStepStateStartRecord = 11,
+  ActivatedStepStateDisconnect = 12,
+  ActivatedStepStateFinished = 13,
 };
 
 typedef SWIFT_ENUM(NSInteger, UploadDataStatus) {
@@ -297,7 +299,7 @@ typedef SWIFT_ENUM(NSInteger, UploadDataStatus) {
 @class BeaconInfo;
 
 @interface BeaconAPI (SWIFT_EXTENSION(BLESDK))
-- (void)RegisterUserWithUserID:(NSString * _Nonnull)userId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
+- (void)RegisterUserWithUserID:(NSString * _Nonnull)userId FireBaseKey:(NSString * _Nullable)firebaseKey completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 - (void)getUserDeviceListWithUserID:(NSString * _Nonnull)userId completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 - (void)checkBeaconExistWithBeaconID:(NSString * _Nonnull)beaconID completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
 - (void)getBeaconInfoWithBeaconID:(NSString * _Nonnull)beaconID completeHandler:(void (^ _Nullable)(NSDictionary<NSString *, id> * _Nonnull))handler;
@@ -465,6 +467,14 @@ SWIFT_CLASS("_TtC6BLESDK10BeaconInfo")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 - (void)updateInfoWithBeaconID:(NSString * _Nonnull)beaconId PW1:(NSString * _Nonnull)pw1 PW2:(NSString * _Nonnull)pw2 PwSeed:(NSString * _Nonnull)seed Brocast:(NSString * _Nonnull)brocast MacInfo:(NSString * _Nonnull)macInfo ExtraInfo:(NSString * _Nonnull)extra;
 - (NSDictionary<NSString *, id> * _Nonnull)getPostFormat SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC6BLESDK13Notifications")
+@interface Notifications : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull POST_NOTIFICATION_DISCONNECT;)
++ (NSNotificationName _Nonnull)POST_NOTIFICATION_DISCONNECT SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
