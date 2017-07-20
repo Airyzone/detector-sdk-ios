@@ -23,7 +23,7 @@
 import CoreBluetooth
 
 @objc internal class SecureDFUService : NSObject, CBPeripheralDelegate, DFUService {
-    static internal let UUID = CBUUID(string: "FE59")
+    static internal let UUID = CBUUID(string: "6413")
     
     static func matches(_ service: CBService) -> Bool {
         return service.uuid.isEqual(UUID)

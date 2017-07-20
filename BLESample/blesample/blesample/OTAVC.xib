@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTAVC">
+            <connections>
+                <outlet property="m_pLblStatus" destination="sBg-vp-b65" id="p9q-dw-eb2"/>
+                <outlet property="m_pProgressView" destination="A4W-tl-Hsr" id="6aU-ye-Zpv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Go8-mH-nbJ">
+                    <rect key="frame" x="0.0" y="70" width="375" height="30"/>
+                    <state key="normal" title="DFU 1.0.4"/>
+                    <connections>
+                        <action selector="pressDFU:" destination="-1" eventType="touchUpInside" id="8Pa-Ne-bxx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DFU Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ool-li-dVS">
+                    <rect key="frame" x="0.0" y="120" width="375" height="44.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-tl-Hsr">
+                    <rect key="frame" x="20" y="214.5" width="335" height="2"/>
+                    <color key="progressTintColor" red="0.0" green="0.60392156860000001" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="trackTintColor" red="0.73588360659999996" green="0.92748980240000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBg-vp-b65">
+                    <rect key="frame" x="0.0" y="266.5" width="375" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Go8-mH-nbJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8ih-nT-AYd"/>
+                <constraint firstItem="sBg-vp-b65" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DhT-w5-Irq"/>
+                <constraint firstAttribute="trailing" secondItem="Go8-mH-nbJ" secondAttribute="trailing" id="EkQ-Fa-1oc"/>
+                <constraint firstItem="sBg-vp-b65" firstAttribute="top" secondItem="A4W-tl-Hsr" secondAttribute="bottom" constant="50" id="Pfk-PT-e8F"/>
+                <constraint firstAttribute="trailing" secondItem="ool-li-dVS" secondAttribute="trailing" id="ae4-Ds-weB"/>
+                <constraint firstAttribute="trailing" secondItem="sBg-vp-b65" secondAttribute="trailing" id="gO5-0G-iHk"/>
+                <constraint firstItem="A4W-tl-Hsr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ggY-k5-oMs"/>
+                <constraint firstItem="A4W-tl-Hsr" firstAttribute="top" secondItem="ool-li-dVS" secondAttribute="bottom" constant="50" id="htd-uf-v6n"/>
+                <constraint firstItem="ool-li-dVS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oNi-K5-Iz8"/>
+                <constraint firstItem="ool-li-dVS" firstAttribute="top" secondItem="Go8-mH-nbJ" secondAttribute="bottom" constant="20" id="ob6-HM-dlj"/>
+                <constraint firstItem="Go8-mH-nbJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="vW0-f0-5ij"/>
+                <constraint firstAttribute="trailing" secondItem="A4W-tl-Hsr" secondAttribute="trailing" constant="20" id="z5P-xM-VSV"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

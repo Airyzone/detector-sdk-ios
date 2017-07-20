@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		821A9F0861FD84456A840905 /* Pods_blesample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653D010921FCA0AF0961DBEC /* Pods_blesample.framework */; };
+		D31DB1611F2042B40071D674 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB15F1F2042B40071D674 /* DetailVC.m */; };
+		D31DB1621F2042B40071D674 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31DB1601F2042B40071D674 /* DetailVC.xib */; };
+		D31DB1661F2043EE0071D674 /* OTAVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D31DB1641F2043EE0071D674 /* OTAVC.m */; };
+		D31DB1671F2043EE0071D674 /* OTAVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31DB1651F2043EE0071D674 /* OTAVC.xib */; };
+		D3279D111F2051600058C47E /* collar_dev_104.zip in Resources */ = {isa = PBXBuildFile; fileRef = D3279D101F2051600058C47E /* collar_dev_104.zip */; };
 		D3B095C21F14834B0013600A /* BLESDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B095C11F14834B0013600A /* BLESDK.framework */; };
 		D3B095C41F1483520013600A /* BLESDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D3B095C11F14834B0013600A /* BLESDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3B095D71F149CC60013600A /* BLESDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B095CA1F149CC60013600A /* BLESDK.framework */; };
@@ -38,6 +43,13 @@
 		6400A1C27CD9630A68C05D28 /* Pods-blesample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blesample.release.xcconfig"; path = "Pods/Target Support Files/Pods-blesample/Pods-blesample.release.xcconfig"; sourceTree = "<group>"; };
 		653D010921FCA0AF0961DBEC /* Pods_blesample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blesample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A33B3EB4066F1AC8A0224A1 /* Pods-blesample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blesample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blesample/Pods-blesample.debug.xcconfig"; sourceTree = "<group>"; };
+		D31DB15E1F2042B40071D674 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailVC.h; path = blesample/DetailVC.h; sourceTree = "<group>"; };
+		D31DB15F1F2042B40071D674 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailVC.m; path = blesample/DetailVC.m; sourceTree = "<group>"; };
+		D31DB1601F2042B40071D674 /* DetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailVC.xib; path = blesample/DetailVC.xib; sourceTree = "<group>"; };
+		D31DB1631F2043EE0071D674 /* OTAVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OTAVC.h; path = blesample/OTAVC.h; sourceTree = "<group>"; };
+		D31DB1641F2043EE0071D674 /* OTAVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OTAVC.m; path = blesample/OTAVC.m; sourceTree = "<group>"; };
+		D31DB1651F2043EE0071D674 /* OTAVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OTAVC.xib; path = blesample/OTAVC.xib; sourceTree = "<group>"; };
+		D3279D101F2051600058C47E /* collar_dev_104.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = collar_dev_104.zip; sourceTree = "<group>"; };
 		D3B095A61F1483070013600A /* blesample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blesample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B095C11F14834B0013600A /* BLESDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BLESDK.framework; sourceTree = "<group>"; };
 		D3B095CA1F149CC60013600A /* BLESDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BLESDK.framework; sourceTree = "<group>"; };
@@ -83,14 +95,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3279D0F1F2051600058C47E /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+				D3279D101F2051600058C47E /* collar_dev_104.zip */,
+			);
+			name = Firmware;
+			path = blesample/Firmware;
+			sourceTree = "<group>";
+		};
 		D3B0959D1F1483070013600A = {
 			isa = PBXGroup;
 			children = (
+				D3279D0F1F2051600058C47E /* Firmware */,
 				D3B095C91F149CC60013600A /* framework */,
 				D3B095CB1F149CC60013600A /* Base.lproj */,
 				D3B095CC1F149CC60013600A /* Main.storyboard */,
 				D3B095CD1F149CC60013600A /* ViewController.m */,
 				D3B095D01F149CC60013600A /* ViewController.h */,
+				D31DB15E1F2042B40071D674 /* DetailVC.h */,
+				D31DB15F1F2042B40071D674 /* DetailVC.m */,
+				D31DB1601F2042B40071D674 /* DetailVC.xib */,
+				D31DB1631F2043EE0071D674 /* OTAVC.h */,
+				D31DB1641F2043EE0071D674 /* OTAVC.m */,
+				D31DB1651F2043EE0071D674 /* OTAVC.xib */,
 				D3B095D11F149CC60013600A /* Info.plist */,
 				D3B095D21F149CC60013600A /* AppDelegate.h */,
 				D3B095D31F149CC60013600A /* AppDelegate.m */,
@@ -202,9 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B095DB1F149CC60013600A /* Info.plist in Resources */,
+				D3279D111F2051600058C47E /* collar_dev_104.zip in Resources */,
 				D3B095DE1F149CC60013600A /* LaunchScreen.storyboard in Resources */,
 				D3B095DD1F149CC60013600A /* Assets.xcassets in Resources */,
+				D31DB1671F2043EE0071D674 /* OTAVC.xib in Resources */,
 				D3B095D81F149CC60013600A /* Main.storyboard in Resources */,
+				D31DB1621F2042B40071D674 /* DetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B095D91F149CC60013600A /* ViewController.m in Sources */,
+				D31DB1611F2042B40071D674 /* DetailVC.m in Sources */,
 				D3B095DF1F149CC60013600A /* main.m in Sources */,
 				D3B095DC1F149CC60013600A /* AppDelegate.m in Sources */,
+				D31DB1661F2043EE0071D674 /* OTAVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

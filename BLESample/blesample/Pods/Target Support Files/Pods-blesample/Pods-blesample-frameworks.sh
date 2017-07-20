@@ -91,22 +91,16 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaMQTT/CocoaMQTT.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PKHUD/PKHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SwiftyTimer/SwiftyTimer.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Toast-Swift/Toast_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIToast/UIToast.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Zip/Zip.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iOSDFULibrary/iOSDFULibrary.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket/CocoaAsyncSocket.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaMQTT/CocoaMQTT.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PKHUD/PKHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SwiftyTimer/SwiftyTimer.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Toast-Swift/Toast_Swift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIToast/UIToast.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Zip/Zip.framework"
   install_framework "$BUILT_PRODUCTS_DIR/iOSDFULibrary/iOSDFULibrary.framework"
 fi

@@ -1,0 +1,6 @@
+framework module UIToast {
+  umbrella header "UIToast-umbrella.h"
+
+  export *
+  module * { export * }
+}

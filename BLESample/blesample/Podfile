@@ -9,9 +9,8 @@ target 'blesample' do
 xcodeproj 'blesample.xcodeproj'
 workspace 'blesample'
 pod 'AFNetworking', '~> 3.0'
-pod 'Toast-Swift', '~> 2.0.0'
+pod 'UIToast'
 pod 'Alamofire', '~> 4.3'
-pod 'PKHUD', '~> 4.0'
-pod 'CocoaMQTT', '~> 1.0'
+pod 'MBProgressHUD', '~> 1.0.0'
 pod 'iOSDFULibrary', '~> 3.0'
 end
