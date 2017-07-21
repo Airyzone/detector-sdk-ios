@@ -11,8 +11,8 @@
 #import "DetailVC.h"
 #import "OTAVC.h"
 
-//#define kBeaconAPI_APPID        @"YourAppID"
-//#define kBeaconAPI_APPKEY       @"YourAppKey"
+#define kBeaconAPI_APPID        @"YourAppID"
+#define kBeaconAPI_APPKEY       @"YourAppKey"
 
 @import BLESDK;
 
