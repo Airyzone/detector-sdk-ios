@@ -164,6 +164,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BeaconAPI * 
 - (NSString * _Nonnull)getLastResult SWIFT_WARN_UNUSED_RESULT;
 - (void)activateBeacon:(mBeacon * _Nullable)beacon :(void (^ _Nonnull)(enum ActivateState))completionHandler;
 - (void)callBuzzer:(mBeacon * _Nullable)beacon;
+- (BOOL)callBuzzerWithValue:(mBeacon * _Nullable)beacon :(uint8_t)value SWIFT_WARN_UNUSED_RESULT;
 - (void)readRecordData:(mBeacon * _Nullable)beacon;
 - (void)readBattery:(mBeacon * _Nullable)beacon :(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nonnull))completionHandler;
 - (void)updateDataLog:(mBeacon * _Nullable)beacon :(NSString * _Nonnull)userID :(NSString * _Nonnull)beaconID :(void (^ _Nonnull)(enum UploadDataStatus))completionHandler;
