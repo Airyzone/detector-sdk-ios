@@ -31,6 +31,7 @@
 		D390E8A91EBA134E003C154A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D390E8A81EBA134E003C154A /* Assets.xcassets */; };
 		D390E8AC1EBA134E003C154A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D390E8AA1EBA134E003C154A /* LaunchScreen.storyboard */; };
 		D39F9BE61EBA3E2400514B39 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */; };
+		D3B932E41F645CE100A478E2 /* DFUVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B932E31F645CE100A478E2 /* DFUVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +74,7 @@
 		D390E8AB1EBA134E003C154A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D390E8AD1EBA134E003C154A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D3B932E31F645CE100A478E2 /* DFUVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				D390E8A31EBA134E003C154A /* ViewController.swift */,
 				D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */,
 				D38C8B701ED56303003B2AF6 /* DeviceBindingList.swift */,
+				D3B932E31F645CE100A478E2 /* DFUVC.swift */,
 				D390E8A51EBA134E003C154A /* Main.storyboard */,
 				D390E8A81EBA134E003C154A /* Assets.xcassets */,
 				D390E8AA1EBA134E003C154A /* LaunchScreen.storyboard */,
@@ -239,6 +242,7 @@
 				D39F9BE61EBA3E2400514B39 /* DetailViewController.swift in Sources */,
 				D390E8A41EBA134E003C154A /* ViewController.swift in Sources */,
 				D390E8A21EBA134E003C154A /* AppDelegate.swift in Sources */,
+				D3B932E41F645CE100A478E2 /* DFUVC.swift in Sources */,
 				D377DA101ECB61CA007F1AAA /* DeviceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

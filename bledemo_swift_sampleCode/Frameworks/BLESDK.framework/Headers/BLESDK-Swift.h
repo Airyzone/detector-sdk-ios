@@ -258,6 +258,7 @@ typedef SWIFT_ENUM(NSInteger, ActivatedStepState) {
 typedef SWIFT_ENUM(NSInteger, UploadDataStatus) {
   UploadDataStatusSuccess = 0,
   UploadDataStatusFailed = 1,
+  UploadDataStatusNoNewData = 2,
 };
 
 

@@ -17,18 +17,14 @@ class DetailViewController: UIViewController
     var m_pBeacon:mBeacon?
 
     //MARK: - View Outlets
-    @IBOutlet weak var peripheralNameLabel   : UILabel!
     @IBOutlet weak var m_pTFPw: UITextField!
     @IBOutlet weak var m_pLblStatus: UILabel!
     @IBOutlet weak var m_pTFUserID: UITextField!
-    @IBOutlet weak var m_pLblBeaconID: UILabel!
     @IBOutlet weak var m_pTFNickName: UITextField!
     @IBOutlet weak var m_pMainScrollView: UIScrollView!
     @IBOutlet weak var m_pCntView: UIView!
     
-    @IBOutlet weak var dfuUploadProgressView : UIProgressView!
-    @IBOutlet weak var dfuUploadStatus       : UILabel!
-    @IBOutlet weak var dfuStatusLabel        : UILabel!
+
     //MARK: - override
 
     override func viewWillAppear(_ animated: Bool)
@@ -43,8 +39,8 @@ class DetailViewController: UIViewController
         
         m_pBeacon = BeaconAPI.sharedInstance.getCurrentBeacon()
         
-        peripheralNameLabel.text = m_pBeacon?.beaconDeviceName
-        self.m_pLblBeaconID.text = m_pBeacon?.macId
+        self.title = m_pBeacon?.macId
+        
     }
 
     
@@ -57,8 +53,12 @@ class DetailViewController: UIViewController
         
         self.m_pMainScrollView.contentSize = self.m_pCntView.frame.size
 
+
+        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
-        BeaconAPI.sharedInstance.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,11 +68,23 @@ class DetailViewController: UIViewController
     
     //MARK:- IBAction
     
-    @IBAction func pressLogin1(_ sender: Any)
+    @IBAction func pressUpdateLog(_ sender: Any)
     {
-        HUD.show(.progress)
         let userID:String = self.m_pTFUserID.text!
-        let beaconID:String = self.m_pLblBeaconID.text!
+        
+        if  userID == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入UserID", comment: ""),
+                                duration: 1,
+                                position: .center)
+            
+            return
+        }
+        
+
+        HUD.show(.progress)
+     
+        let beaconID:String = self.title!
         BeaconAPI.sharedInstance.updateDataLog(m_pBeacon, userID, beaconID, { (state) -> Void in
             
             if state == BeaconAPI.UploadDataStatus.success
@@ -81,9 +93,15 @@ class DetailViewController: UIViewController
                                     duration: 1,
                                     position: .center)
             }
+            if state == BeaconAPI.UploadDataStatus.noNewData
+            {
+                self.view.makeToast(NSLocalizedString("尚未有新的資料", comment: ""),
+                                    duration: 1,
+                                    position: .center)
+            }
             else
             {
-                self.view.makeToast(NSLocalizedString("上傳成功", comment: ""),
+                self.view.makeToast(NSLocalizedString("上傳失敗", comment: ""),
                                     duration: 1,
                                     position: .center)
             }
@@ -95,7 +113,7 @@ class DetailViewController: UIViewController
         })
     }
     
-    @IBAction func pressLogin2(_ sender: Any)
+    @IBAction func pressBuzzer(_ sender: Any)
     {
         BeaconAPI.sharedInstance.callBuzzer(m_pBeacon)
         
@@ -112,7 +130,7 @@ class DetailViewController: UIViewController
         }
     }
     
-    @IBAction func pressChangePwd1(_ sender: Any)
+    @IBAction func pressReadBattery(_ sender: Any)
     {
         BeaconAPI.sharedInstance.readBattery(m_pBeacon,{ (responseDic) -> Void in
             
@@ -125,21 +143,33 @@ class DetailViewController: UIViewController
     }
     
     
-    @IBAction func pressChangePwd2(_ sender: Any)
+    @IBAction func pressGetLog(_ sender: Any)
     {
-        HUD.show(.progress)
         let userID:String = self.m_pTFUserID.text!
-        let beaconID:String = self.m_pLblBeaconID.text!
         
-        BeaconAPI.sharedInstance.getDataByDate(UserID: userID, BeaconID: beaconID, Date: "2017-06-19", completeHandler: { (response) -> Void in
-        
-        
-        })
-        
-        BeaconAPI.sharedInstance.getDataByMonth(UserID: userID, BeaconID: beaconID, Month: "2017-06", completeHandler: { (response) -> Void in
+        if  userID == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入UserID", comment: ""),
+                                duration: 1,
+                                position: .center)
             
-            
-        })
+            return
+        }
+        
+        
+        HUD.show(.progress)
+
+        let beaconID:String = self.title!
+        
+//        BeaconAPI.sharedInstance.getDataByDate(UserID: userID, BeaconID: beaconID, Date: "2017-06-19", completeHandler: { (response) -> Void in
+//        
+//        
+//        })
+        
+//        BeaconAPI.sharedInstance.getDataByMonth(UserID: userID, BeaconID: beaconID, Month: "2017-06", completeHandler: { (response) -> Void in
+//            
+//            
+//        })
         
         
         BeaconAPI.sharedInstance.getDataByYear(UserID: userID, BeaconID: beaconID, Year: "2017",  completeHandler: { (response) -> Void in
@@ -150,7 +180,7 @@ class DetailViewController: UIViewController
                 let msg:String = dic["msg"] as! String
                 let list:[Any] = dic["list"] as! [Any]
                 
-                //print("list is \(list)")
+                print("list is \(list)")
             
             }
             HUD.hide()
@@ -162,8 +192,19 @@ class DetailViewController: UIViewController
     
     @IBAction func pressRegister(_ sender: Any)
     {
-        HUD.show(.progress)
         let userID:String = self.m_pTFUserID.text!
+        
+        if  userID == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入UserID", comment: ""),
+                                duration: 1,
+                                position: .center)
+            
+            return
+        }
+        
+        
+        HUD.show(.progress)
         BeaconAPI.sharedInstance.RegisterUser(UserID: userID, FireBaseKey: nil, completeHandler: { (response) -> Void in
             
             if let dic:[String:Any] = response
@@ -199,15 +240,56 @@ class DetailViewController: UIViewController
     
     @IBAction func pressGetDeviceList(_ sender: Any)
     {
+        let userID:String = self.m_pTFUserID.text!
         
+        if  userID == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入UserID", comment: ""),
+                                duration: 1,
+                                position: .center)
+            
+            return
+        }
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "DeviceBinding") as! DeviceBindingList
+        
+        vc.m_pUserID = userID
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     @IBAction func pressBinding(_ sender: Any)
     {
-        HUD.show(.progress)
         let userID:String = self.m_pTFUserID.text!
-        let beaconID:String = self.m_pLblBeaconID.text!
+        
+        if  userID == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入UserID", comment: ""),
+                                duration: 1,
+                                position: .center)
+            
+            return
+        }
+        
         let nickName:String = self.m_pTFNickName.text!
+        if  nickName == ""
+        {
+            self.view.makeToast(NSLocalizedString("請先輸入Nickname", comment: ""),
+                                duration: 1,
+                                position: .center)
+            
+            return
+        }
+        
+        
+        HUD.show(.progress)
+        let beaconID:String = self.title!
+        
         
         
         
@@ -256,31 +338,32 @@ class DetailViewController: UIViewController
         })
     }
     
-    @IBAction func pressStartDFU(_ sender: Any)
-    {
-        if let resourceUrl = Bundle.main.url(forResource: "collar_106", withExtension: "zip", subdirectory: "")
-        {
-           BeaconAPI.sharedInstance.performDFU(resourceUrl)
-        }
-        
-        
-    }
-    
     //MARK: - Navigation
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
+//    {
+//        return identifier == "showBindingList"
+//    }
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        if segue.identifier == "showBindingList"
+//        {
+//            //Sent the peripheral in the dfu view
+//            let deviceBindingList = segue.destination as! DeviceBindingList
+//            deviceBindingList.m_pUserID = self.m_pTFUserID.text
+//            
+//        }
+//    }
+    
+    
+    func keyboardWillShow(notification: NSNotification)
     {
-        return identifier == "showBindingList"
+        self.m_pMainScrollView.frame.size.height = self.view.frame.size.height - 200
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func keyboardWillHide(notification: NSNotification)
     {
-        if segue.identifier == "showBindingList"
-        {
-            //Sent the peripheral in the dfu view
-            let deviceBindingList = segue.destination as! DeviceBindingList
-            deviceBindingList.m_pUserID = self.m_pTFUserID.text
-            
-        }
+        self.m_pMainScrollView.frame.size.height = self.view.frame.size.height
     }
     
     
@@ -294,27 +377,4 @@ extension DetailViewController:UITextFieldDelegate
         
         return true
     }
-}
-
-extension DetailViewController : BeaconAPIDelegate
-{
-    func dfuProgressUpdate(for part: Int,
-                           outOf totalParts: Int,
-                           to progress: Int,
-                           currentSpeedBytesPerSecond: Double,
-                           avgSpeedBytesPerSecond: Double) -> Void
-    {
-        dfuUploadProgressView.setProgress(Float(progress)/100.0, animated: true)
-        dfuUploadStatus.text = String(format: "Part: %d/%d\nSpeed: %.1f KB/s\nAverage Speed: %.1f KB/s",
-                                      part, totalParts, currentSpeedBytesPerSecond/1024, avgSpeedBytesPerSecond/1024)
-    }
-
-    func dfuStatusUpdate(to state: BeaconAPI_DFUState) -> Void
-    {
-        
-        dfuStatusLabel.text = state.description()
-        //print("Changed state to: \(state.description())")
-
-    }
-    
 }

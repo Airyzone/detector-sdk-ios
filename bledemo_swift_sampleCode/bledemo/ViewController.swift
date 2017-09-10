@@ -160,6 +160,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func connectBeacon(beacon:mBeacon) -> Void
     {
+        HUD.show(.progress)
         BeaconAPI.sharedInstance.connectBeacon(beacon, { (state:BeaconAPI.ConnectState) -> Void in
             
             if state == BeaconAPI.ConnectState.Connected
@@ -178,12 +179,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func connectOTABeacon(beacon:mBeacon) -> Void
     {
+        HUD.show(.progress)
         BeaconAPI.sharedInstance.connectOTABeacon(beacon, { (state:BeaconAPI.ConnectState) -> Void in
             
             if state == BeaconAPI.ConnectState.Connected
             {
                 //print("Beacon Connected")
-                self.performSegue(withIdentifier: "showDetail", sender: self)
+                self.performSegue(withIdentifier: "showDFU", sender: self)
             }
             else if state == BeaconAPI.ConnectState.ConnectFailed
             {
@@ -234,7 +236,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        HUD.show(.progress)
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let beacon:mBeacon = discoveredPeripherals[indexPath.row]
@@ -247,9 +249,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else
         {
-            //檢查是否綁定
-            BeaconAPI.sharedInstance.checkBeaconExist(BeaconID: beacon.macId,  completeHandler: { (response) -> Void in
-                
+            //檢查是否開通
+            HUD.show(.progress)
+            BeaconAPI.sharedInstance.getBeaconInfo(BeaconID: beacon.macId,  completeHandler: { (response) -> Void in
+                HUD.hide()
                 if let dic:[String:Any] = response
                 {
                     let status:String = dic["status"] as! String
@@ -257,14 +260,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     if status == "OK"
                     {
-                        self.view.makeToast(NSLocalizedString("已開通", comment: ""),
-                                            duration: 1,
-                                            position: .center)
                         self.connectBeacon(beacon: beacon)
                     }
-                    else if status == "NotActivated"
+                    else if status == "Fail"
                     {
-                        self .showActivateAlert(beacon: beacon)
+                        self.showActivateAlert(beacon: beacon)
                     }
                     else
                     {
@@ -280,9 +280,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                         duration: 3,
                                         position: .center)
                 }
-                
-                
-                HUD.hide()
             })
 
         }
