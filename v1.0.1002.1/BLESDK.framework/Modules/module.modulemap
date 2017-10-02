@@ -7,4 +7,5 @@ framework module BLESDK {
 
 module BLESDK.Swift {
     header "BLESDK-Swift.h"
+    requires objc
 }
