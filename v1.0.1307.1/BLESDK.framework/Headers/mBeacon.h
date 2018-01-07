@@ -41,6 +41,8 @@
     NSNumber        *lastRssi;                  // rssi value when discovery
     NSDate          *lastDiscoveryTime;         // discovery beacon time
 
+    
+    int             m_nTemperature;
 }
 
 /**
@@ -108,6 +110,12 @@
  *  discovery beacon time
  */
 @property (nonatomic, readonly) NSDate *lastDiscoveryTime;
+
+/**
+ *  discovery beacon time
+ */
+@property (nonatomic, readonly) int     m_nTemperature;
+
 
 /**
  *  init mBeacon class
