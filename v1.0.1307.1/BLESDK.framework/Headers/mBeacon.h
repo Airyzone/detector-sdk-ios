@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-
+#import <UIKit/UIKit.h>
 #define MIN_RSSI_IMMEDIATE -50
 #define MAX_RSSI_IMMEDIATE   0
 #define MIN_RSSI_NEAR      -80
@@ -42,7 +42,7 @@
     NSDate          *lastDiscoveryTime;         // discovery beacon time
 
     
-    int             m_nTemperature;
+    CGFloat             m_fTemperature;
 }
 
 /**
@@ -114,7 +114,7 @@
 /**
  *  discovery beacon time
  */
-@property (nonatomic, readonly) int     m_nTemperature;
+@property (nonatomic, readonly) CGFloat     m_fTemperature;
 
 
 /**
