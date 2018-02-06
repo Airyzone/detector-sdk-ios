@@ -1,0 +1,11 @@
+framework module BLESDK {
+  umbrella header "BLESDK.h"
+
+  export *
+  module * { export * }
+}
+
+module BLESDK.Swift {
+    header "BLESDK-Swift.h"
+    requires objc
+}

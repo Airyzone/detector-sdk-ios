@@ -1,0 +1,35 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.6.0)
+  - PKHUD (4.2.3)
+  - Toast-Swift (3.0.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - Alamofire (~> 4.3)
+  - PKHUD (~> 4.0)
+  - Toast-Swift
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
+
+PODFILE CHECKSUM: b98b83c830df2fbfd964af385ad0cf8cca297ebd
+
+COCOAPODS: 1.3.1

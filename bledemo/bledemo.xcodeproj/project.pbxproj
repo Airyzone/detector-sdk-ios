@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		616DF143A059DD9B8E564033 /* Pods_bledemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0888160FC881E65B70089142 /* Pods_bledemo.framework */; };
+		99B8FEF6202A0A78008F36F9 /* BLESDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEDE202A097F008F36F9 /* BLESDK.framework */; };
+		99B8FEF7202A0A78008F36F9 /* BLESDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEDE202A097F008F36F9 /* BLESDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99B8FEF8202A0A78008F36F9 /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEDF202A097F008F36F9 /* Zip.framework */; };
+		99B8FEF9202A0A78008F36F9 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEDF202A097F008F36F9 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99B8FEFA202A0A78008F36F9 /* iOSDFULibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEE0202A097F008F36F9 /* iOSDFULibrary.framework */; };
+		99B8FEFB202A0A78008F36F9 /* iOSDFULibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FEE0202A097F008F36F9 /* iOSDFULibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D32DE7601F04FDDC00C93DB4 /* collar_dev_104.zip in Resources */ = {isa = PBXBuildFile; fileRef = D32DE75F1F04FDDC00C93DB4 /* collar_dev_104.zip */; };
+		D34A58FD1F65BA9B0029D95F /* collar_107.zip in Resources */ = {isa = PBXBuildFile; fileRef = D34A58FC1F65BA9B0029D95F /* collar_107.zip */; };
+		D35E315E1F4A776000C145B8 /* collar_106.zip in Resources */ = {isa = PBXBuildFile; fileRef = D35E315D1F4A776000C145B8 /* collar_106.zip */; };
+		D377DA101ECB61CA007F1AAA /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377DA0F1ECB61CA007F1AAA /* DeviceCell.swift */; };
+		D38C8B711ED56303003B2AF6 /* DeviceBindingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C8B701ED56303003B2AF6 /* DeviceBindingList.swift */; };
+		D390E8A21EBA134E003C154A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E8A11EBA134E003C154A /* AppDelegate.swift */; };
+		D390E8A41EBA134E003C154A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D390E8A31EBA134E003C154A /* ViewController.swift */; };
+		D390E8A71EBA134E003C154A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D390E8A51EBA134E003C154A /* Main.storyboard */; };
+		D390E8A91EBA134E003C154A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D390E8A81EBA134E003C154A /* Assets.xcassets */; };
+		D390E8AC1EBA134E003C154A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D390E8AA1EBA134E003C154A /* LaunchScreen.storyboard */; };
+		D39F9BE61EBA3E2400514B39 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */; };
+		D3B932EA1F646A9100A478E2 /* DFUVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B932E91F646A9100A478E2 /* DFUVC.swift */; };
+		D3C8CF941FC3EF960040F834 /* Thermo_001.zip in Resources */ = {isa = PBXBuildFile; fileRef = D3C8CF931FC3EF960040F834 /* Thermo_001.zip */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		99B8FEFC202A0A78008F36F9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				99B8FEF9202A0A78008F36F9 /* Zip.framework in Embed Frameworks */,
+				99B8FEFB202A0A78008F36F9 /* iOSDFULibrary.framework in Embed Frameworks */,
+				99B8FEF7202A0A78008F36F9 /* BLESDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0888160FC881E65B70089142 /* Pods_bledemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bledemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87863AE5082E8C58AD13EA8C /* Pods-bledemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bledemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-bledemo/Pods-bledemo.release.xcconfig"; sourceTree = "<group>"; };
+		99B8FEDE202A097F008F36F9 /* BLESDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BLESDK.framework; sourceTree = "<group>"; };
+		99B8FEDF202A097F008F36F9 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Zip.framework; sourceTree = "<group>"; };
+		99B8FEE0202A097F008F36F9 /* iOSDFULibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iOSDFULibrary.framework; sourceTree = "<group>"; };
+		D32DE75F1F04FDDC00C93DB4 /* collar_dev_104.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = collar_dev_104.zip; sourceTree = "<group>"; };
+		D34A58FC1F65BA9B0029D95F /* collar_107.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = collar_107.zip; sourceTree = "<group>"; };
+		D35E315D1F4A776000C145B8 /* collar_106.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = collar_106.zip; sourceTree = "<group>"; };
+		D377DA0F1ECB61CA007F1AAA /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceCell.swift; path = TableViewCell/DeviceCell.swift; sourceTree = "<group>"; };
+		D38C8B701ED56303003B2AF6 /* DeviceBindingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceBindingList.swift; sourceTree = "<group>"; };
+		D390E89E1EBA134E003C154A /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D390E8A11EBA134E003C154A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D390E8A31EBA134E003C154A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D390E8A61EBA134E003C154A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D390E8A81EBA134E003C154A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D390E8AB1EBA134E003C154A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D390E8AD1EBA134E003C154A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D3B932E91F646A9100A478E2 /* DFUVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFUVC.swift; sourceTree = "<group>"; };
+		D3C0C0181ED4A36B00A6595A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D3C8CF931FC3EF960040F834 /* Thermo_001.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Thermo_001.zip; sourceTree = "<group>"; };
+		E6A11470E8110DDDE24B42DD /* Pods-bledemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bledemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bledemo/Pods-bledemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D390E89B1EBA134E003C154A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99B8FEF8202A0A78008F36F9 /* Zip.framework in Frameworks */,
+				99B8FEFA202A0A78008F36F9 /* iOSDFULibrary.framework in Frameworks */,
+				99B8FEF6202A0A78008F36F9 /* BLESDK.framework in Frameworks */,
+				616DF143A059DD9B8E564033 /* Pods_bledemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5865D883BDD7F4A100D467F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6A11470E8110DDDE24B42DD /* Pods-bledemo.debug.xcconfig */,
+				87863AE5082E8C58AD13EA8C /* Pods-bledemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99B8FEDD202A097F008F36F9 /* SDKs */ = {
+			isa = PBXGroup;
+			children = (
+				99B8FEDE202A097F008F36F9 /* BLESDK.framework */,
+				99B8FEDF202A097F008F36F9 /* Zip.framework */,
+				99B8FEE0202A097F008F36F9 /* iOSDFULibrary.framework */,
+			);
+			path = SDKs;
+			sourceTree = "<group>";
+		};
+		A613067FB832FD6810860714 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3C0C0181ED4A36B00A6595A /* CoreBluetooth.framework */,
+				0888160FC881E65B70089142 /* Pods_bledemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D32DE75E1F04FDDC00C93DB4 /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+				D3C8CF931FC3EF960040F834 /* Thermo_001.zip */,
+				D34A58FC1F65BA9B0029D95F /* collar_107.zip */,
+				D35E315D1F4A776000C145B8 /* collar_106.zip */,
+				D32DE75F1F04FDDC00C93DB4 /* collar_dev_104.zip */,
+			);
+			name = Firmware;
+			path = bledemo/Firmware;
+			sourceTree = "<group>";
+		};
+		D377DA0E1ECB61A8007F1AAA /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D377DA0F1ECB61CA007F1AAA /* DeviceCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D390E8951EBA134E003C154A = {
+			isa = PBXGroup;
+			children = (
+				99B8FEDD202A097F008F36F9 /* SDKs */,
+				D32DE75E1F04FDDC00C93DB4 /* Firmware */,
+				D390E8A01EBA134E003C154A /* bledemo */,
+				D390E89F1EBA134E003C154A /* Products */,
+				A613067FB832FD6810860714 /* Frameworks */,
+				5865D883BDD7F4A100D467F4 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D390E89F1EBA134E003C154A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D390E89E1EBA134E003C154A /* bledemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D390E8A01EBA134E003C154A /* bledemo */ = {
+			isa = PBXGroup;
+			children = (
+				D377DA0E1ECB61A8007F1AAA /* TableViewCell */,
+				D390E8A11EBA134E003C154A /* AppDelegate.swift */,
+				D390E8A31EBA134E003C154A /* ViewController.swift */,
+				D39F9BE51EBA3E2400514B39 /* DetailViewController.swift */,
+				D38C8B701ED56303003B2AF6 /* DeviceBindingList.swift */,
+				D3B932E91F646A9100A478E2 /* DFUVC.swift */,
+				D390E8A51EBA134E003C154A /* Main.storyboard */,
+				D390E8A81EBA134E003C154A /* Assets.xcassets */,
+				D390E8AA1EBA134E003C154A /* LaunchScreen.storyboard */,
+				D390E8AD1EBA134E003C154A /* Info.plist */,
+			);
+			path = bledemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D390E89D1EBA134E003C154A /* bledemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D390E8B01EBA134E003C154A /* Build configuration list for PBXNativeTarget "bledemo" */;
+			buildPhases = (
+				BEC6F260C827C66B214B1CF8 /* [CP] Check Pods Manifest.lock */,
+				D390E89A1EBA134E003C154A /* Sources */,
+				D390E89B1EBA134E003C154A /* Frameworks */,
+				D390E89C1EBA134E003C154A /* Resources */,
+				FDE5C51830DEC51E3483856A /* [CP] Embed Pods Frameworks */,
+				0EA68C270405C030AB9BDFFF /* [CP] Copy Pods Resources */,
+				99B8FEFC202A0A78008F36F9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bledemo;
+			productName = bledemo;
+			productReference = D390E89E1EBA134E003C154A /* bledemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D390E8961EBA134E003C154A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rusty Huang";
+				TargetAttributes = {
+					D390E89D1EBA134E003C154A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 723999PU2W;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D390E8991EBA134E003C154A /* Build configuration list for PBXProject "bledemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D390E8951EBA134E003C154A;
+			productRefGroup = D390E89F1EBA134E003C154A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D390E89D1EBA134E003C154A /* bledemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D390E89C1EBA134E003C154A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D390E8AC1EBA134E003C154A /* LaunchScreen.storyboard in Resources */,
+				D3C8CF941FC3EF960040F834 /* Thermo_001.zip in Resources */,
+				D34A58FD1F65BA9B0029D95F /* collar_107.zip in Resources */,
+				D390E8A91EBA134E003C154A /* Assets.xcassets in Resources */,
+				D32DE7601F04FDDC00C93DB4 /* collar_dev_104.zip in Resources */,
+				D390E8A71EBA134E003C154A /* Main.storyboard in Resources */,
+				D35E315E1F4A776000C145B8 /* collar_106.zip in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EA68C270405C030AB9BDFFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bledemo/Pods-bledemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEC6F260C827C66B214B1CF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bledemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDE5C51830DEC51E3483856A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-bledemo/Pods-bledemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bledemo/Pods-bledemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D390E89A1EBA134E003C154A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D38C8B711ED56303003B2AF6 /* DeviceBindingList.swift in Sources */,
+				D39F9BE61EBA3E2400514B39 /* DetailViewController.swift in Sources */,
+				D390E8A41EBA134E003C154A /* ViewController.swift in Sources */,
+				D390E8A21EBA134E003C154A /* AppDelegate.swift in Sources */,
+				D3B932EA1F646A9100A478E2 /* DFUVC.swift in Sources */,
+				D377DA101ECB61CA007F1AAA /* DeviceCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D390E8A51EBA134E003C154A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D390E8A61EBA134E003C154A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D390E8AA1EBA134E003C154A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D390E8AB1EBA134E003C154A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D390E8AE1EBA134E003C154A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D390E8AF1EBA134E003C154A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D390E8B11EBA134E003C154A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A11470E8110DDDE24B42DD /* Pods-bledemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 723999PU2W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDKs",
+				);
+				INFOPLIST_FILE = bledemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fofo.bledemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		D390E8B21EBA134E003C154A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87863AE5082E8C58AD13EA8C /* Pods-bledemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 723999PU2W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/SDKs",
+				);
+				INFOPLIST_FILE = bledemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fofo.bledemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D390E8991EBA134E003C154A /* Build configuration list for PBXProject "bledemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D390E8AE1EBA134E003C154A /* Debug */,
+				D390E8AF1EBA134E003C154A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D390E8B01EBA134E003C154A /* Build configuration list for PBXNativeTarget "bledemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D390E8B11EBA134E003C154A /* Debug */,
+				D390E8B21EBA134E003C154A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D390E8961EBA134E003C154A /* Project object */;
+}
